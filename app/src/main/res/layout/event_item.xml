@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="event"
+            type="edu.bluejack23_1.next.model.Event" />
+
+        <variable
+            name="listener"
+            type="edu.bluejack23_1.next.model.recyclerView.adapter.IEventListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginBottom="20dp"
+        android:background="@{event.status.equals(`Active`) ? @drawable/white_rounded : @drawable/grey_rounded}"
+        android:elevation="3dp"
+        android:onClick="@{(v) -> listener.onEventClicked(event)}"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/event_name_list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
+            android:text="@{event.title}"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="20dp"/>
+
+        <edu.bluejack23_1.next.components.UserThumbnailImageView
+            android:id="@+id/event_issuer_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/user_icon"
+            app:imgUrlByUsername="@{event.issuer}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_name_list_item" />
+
+        <TextView
+            android:id="@+id/event_issuer_list_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@{`Issued by ` + event.issuer.toUpperCase()}"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@id/event_issuer_image"
+            app:layout_constraintTop_toBottomOf="@id/event_name_list_item"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <TextView
+            android:id="@+id/event_slot_list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:text="@{(event.needed - event.participantsCount) + `/` + event.needed + ` slots left`}"
+            android:textAlignment="textEnd"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="20dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

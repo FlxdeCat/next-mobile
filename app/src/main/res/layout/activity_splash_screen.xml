@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#211D3B"
+    app:circularflow_defaultRadius="10dp"
+    tools:context=".views.SplashScreenActivity">
+
+    <ImageView
+        android:id="@+id/imageViewLogoSplash"
+        android:layout_width="287dp"
+        android:layout_height="285dp"
+        android:background="@drawable/black_rounded_border"
+        android:clipToOutline="true"
+        android:src="@drawable/jd_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="150dp"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452"
+        app:layout_constraintWidth_max="150dp"
+        android:contentDescription="@string/next_app_name"/>
+
+    <TextView
+        android:id="@+id/splashLogoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/revalia"
+        android:text="@string/next_app_name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLogoSplash" />
+</androidx.constraintlayout.widget.ConstraintLayout>

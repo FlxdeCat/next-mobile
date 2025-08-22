@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "49081775628",
+    "project_id": "tpa-mobile-nj-xd",
+    "storage_bucket": "tpa-mobile-nj-xd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49081775628:android:79d67dc9691adfab01a029",
+        "android_client_info": {
+          "package_name": "edu.bluejack23_1.next"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaqTS6xhQJGGfxg4oSynZwkRDuyhY4FEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
